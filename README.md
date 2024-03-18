@@ -15,7 +15,7 @@ NIM : 220102087<br>
 **1. Installation**<br>
     **a. Composer Installation**
       Teknik pertama buka cmder pada web server, lalu ketikan seperti dibawah<br>
-      ```shell
+      ```
       $ composer create-project codeigniter4/appstarter project-root```<br>
       project-root dapat diganti sesuai nama projek anda<br>
       contohnya <br>
