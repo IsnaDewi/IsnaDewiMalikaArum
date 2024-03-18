@@ -146,9 +146,9 @@ contohnya <br>
 lalu kunjungi **_localhost:8080/home_** <br>
 seperti gambar dibawah ini <br>
 ![image](https://github.com/IsnaDewi/IsnaDewiMalikaArum/assets/134571793/3300938e-c450-4880-a519-09d138618336) <br>
-**Bagian Berita** , tempat Anda akan mulai menggunakan model dan melakukan beberapa operasi basis data dasar.
-      1. Buat Database dan Tabel pada phpMyAdmin
-         membuat database **ci4tutorial** yang dapat digunakan untuk tutorial ini
+**Bagian Berita** , tempat Anda akan mulai menggunakan model dan melakukan beberapa operasi basis data dasar.<br>
+      1. Buat Database dan Tabel pada phpMyAdmin<br>
+         membuat database **ci4tutorial** yang dapat digunakan untuk tutorial ini <br>
 ```
 CREATE TABLE news (
     id INT UNSIGNED NOT NULL AUTO_INCREMENT,
@@ -166,8 +166,174 @@ INSERT INTO news VALUES
 (2,'Say it isn\'t so!','say-it-isnt-so','Scientists conclude that some programmers have a sense of humor.'),
 (3,'Caffeination, Yes!','caffeination-yes','World\'s largest coffee shop open onsite nested coffee shop for staff only.');
 ```
-      2. Hubungkan ke Basis Data 
-         hapus tanda komentar pada file env 
+
+      2. Hubungkan ke Basis Data <br>
+         hapus tanda komentar pada file env <br>
+         
+![image](https://github.com/IsnaDewi/IsnaDewiMalikaArum/assets/134571793/20397655-7136-49f8-a225-ae098719b908) <br>
+      3. Buat Model Berita<br>
+            a. Buka direktori app/Models dan buat file baru bernama NewsModel.php dan tambahkan kode berikut.<br>
+```
+<?php
+
+namespace App\Models;
+
+use CodeIgniter\Model;
+
+class NewsModel extends Model
+{
+    protected $table = 'news';
+}
+```
+         b. Tambahkan Metode NewsModel::getNews() <br>
+```
+ public function getNews($slug = false)
+    {
+        if ($slug === false) {
+            return $this->findAll();
+        }
+
+        return $this->where(['slug' => $slug])->first();
+    }
+```
+
+      4. Tampilkan Berita<br>
+            a. Menambahkan Aturan Perutean<br>
+```
+<?php
+
+// ...
+
+use App\Controllers\News; // Add this line
+use App\Controllers\Pages;
+
+$routes->get('news', [News::class, 'index']);           // Add this line
+$routes->get('news/(:segment)', [News::class, 'show']); // Add this line
+
+$routes->get('pages', [Pages::class, 'index']);
+$routes->get('(:segment)', [Pages::class, 'view']);
+```
+      b. Buat Pengontrol Berita <br>
+      Buat pengontrol baru di app/Controllers/News.php . <br>
+```
+<?php
+
+namespace App\Controllers;
+
+use App\Models\NewsModel;
+
+class News extends BaseController
+{
+    public function index()
+    {
+        $model = model(NewsModel::class);
+
+        $data['news'] = $model->getNews();
+    }
+
+    public function show($slug = null)
+    {
+        $model = model(NewsModel::class);
+
+        $data['news'] = $model->getNews($slug);
+    }
+}
+```
+         c. Berita Lengkap::index() Metode <br>
+```
+<?php
+
+namespace App\Controllers;
+
+use App\Models\NewsModel;
+
+class News extends BaseController
+{
+    public function index()
+    {
+        $model = model(NewsModel::class);
+
+        $data = [
+            'news'  => $model->getNews(),
+            'title' => 'News archive',
+        ];
+
+        return view('templates/header', $data)
+            . view('news/index')
+            . view('templates/footer');
+    }
+
+    // ...
+}
+```
+
+      5. Buat File Tampilan berita/indeks <br>
+            a. Buat app/Views/news/index.php dan tambahkan potongan kode berikutnya.<br>
+```
+<h2><?= esc($title) ?></h2>
+
+<?php if (! empty($news) && is_array($news)): ?>
+
+    <?php foreach ($news as $news_item): ?>
+
+        <h3><?= esc($news_item['title']) ?></h3>
+
+        <div class="main">
+            <?= esc($news_item['body']) ?>
+        </div>
+        <p><a href="/news/<?= esc($news_item['slug'], 'url') ?>">View article</a></p>
+
+    <?php endforeach ?>
+
+<?php else: ?>
+
+    <h3>No News</h3>
+
+    <p>Unable to find any news for you.</p>
+
+<?php endif ?>
+```
+
+      b. Berita Lengkap::show()Metode
+```
+<?php
+
+namespace App\Controllers;
+
+use App\Models\NewsModel;
+use CodeIgniter\Exceptions\PageNotFoundException;
+
+class News extends BaseController
+{
+    // ...
+
+    public function show($slug = null)
+    {
+        $model = model(NewsModel::class);
+
+        $data['news'] = $model->getNews($slug);
+
+        if (empty($data['news'])) {
+            throw new PageNotFoundException('Cannot find the news item: ' . $slug);
+        }
+
+        $data['title'] = $data['news']['title'];
+
+        return view('templates/header', $data)
+            . view('news/view')
+            . view('templates/footer');
+    }
+}
+```
+
+      6. Buat berita/lihat lihat file<br>
+            membuat tampilan terkait di app/Views/news/view.php . Letakkan kode berikut di file ini.<br>
+```
+<h2><?= esc($news['title']) ?></h2>
+<p><?= esc($news['body']) ?></p>
+```
+
+lalu arahakn pada browser ketik **_localhost:8080/news_**
 
 **Buat item berita** , yang akan memperkenalkan operasi database lebih lanjut dan validasi formulir.
 **Kesimpulan** , yang akan memberi Anda beberapa petunjuk tentang bacaan lebih lanjut dan sumber daya lainnya.
