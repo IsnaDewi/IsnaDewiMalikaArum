@@ -553,8 +553,63 @@ contohnya <br>
          a. Pemuat Otomatis Codelgniter4 <br>
          b. Konfigurasi <br>
          Konfigurasi awal dilakukan di app/Config/Autoload.php . File ini berisi dua array utama: satu untuk peta kelas, dan satu lagi untuk namespace yang kompatibel dengan PSR-4. <br>
-            => Ruang Nama 
-            
-         
+            => Ruang Nama <br>
+```
+<?php
+
+namespace Config;
+
+use CodeIgniter\Config\AutoloadConfig;
+
+class Autoload extends AutoloadConfig
+{
+    // ...
+    public $psr4 = [
+        APP_NAMESPACE => APPPATH, // For custom app namespace
+        'Config'      => APPPATH . 'Config',
+    ];
+
+    // ...
+}
+```
+contohnya <br>
+            ![image](https://github.com/IsnaDewi/IsnaDewiMalikaArum/assets/134571793/926074f6-a567-4ae8-9647-496014f50472) <br>
+
+   4.**Mengonfirmasi Namespace**<br>
+      Anda dapat memeriksa konfigurasi namespace dengan perintah:spark namespaces<br>
+```
+php spark namespaces
+```
+5. **Ruang Nama Aplikasi**
+      Anda dapat mengubah namespace ini dengan mengedit file app/Config/Constants.php dan menetapkan nilai namespace baru di bawah APP_NAMESPACEpengaturan:<br>
+```
+defined('APP_NAMESPACE') || define('APP_NAMESPACE', 'App');
+```
+
+6. **Peta Kelas**
+      Classmap digunakan secara luas oleh CodeIgniter untuk meningkatkan kinerja sistem dengan tidak memukul sistem file dengan is_file()panggilan tambahan.<br>
+```
+<?php
+
+namespace Config;
+
+use CodeIgniter\Config\AutoloadConfig;
+
+class Autoload extends AutoloadConfig
+{
+    // ...
+    public $classmap = [
+        'Markdown' => APPPATH . 'ThirdParty/markdown.php',
+    ];
+
+    // ...
+}
+```
+
+7. **Dukungan Komposer**
+      Dukungan komposer secara otomatis diinisialisasi secara default. Secara default, ia mencari file autoload Komposer di . Jika Anda perlu mengubah lokasi file tersebut karena alasan apa pun, Anda dapat mengubah nilai yang ditentukan di app/Config/Constants.php . <br>
+
+
+   
       
       
