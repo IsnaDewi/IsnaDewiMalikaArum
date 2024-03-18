@@ -20,7 +20,12 @@ NIM : 220102087<br>
       project-root dapat diganti sesuai nama projek anda<br>
       contohnya <br>
       ![Screenshot 2024-03-18 101407](https://github.com/IsnaDewi/IsnaDewiMalikaArum/assets/134571793/6c42ca1c-a2a5-4daf-81ea-b0ed2399adfb)<br>
-      **b.Manual Installation**
+      Kemudian untuk menjalankan server ketikan<br>
+      ```cd (isikan nama root anda)``` <br>
+      contohnya <br>
+
+      lalu ketikan <br>
+      ``` php spark server ``` <br>
       
       
       
