@@ -489,6 +489,7 @@ contohnya <br>
 Ini bisa sesederhana:<br>
 ```<p>News item created successfully.</p>```
 contohnya <br>
+![image](https://github.com/IsnaDewi/IsnaDewiMalikaArum/assets/134571793/22f628fc-9b94-4d6f-ae05-767473328f9a)<br>
 
       4. Pembaruan Model Berita<br>
             Edit NewsModel untuk memberikannya daftar bidang yang dapat diperbarui di $allowedFields properti.<br>
