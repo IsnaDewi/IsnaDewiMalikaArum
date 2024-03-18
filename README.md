@@ -173,6 +173,7 @@ INSERT INTO news VALUES
 ![image](https://github.com/IsnaDewi/IsnaDewiMalikaArum/assets/134571793/20397655-7136-49f8-a225-ae098719b908) <br>
       3. Buat Model Berita<br>
             a. Buka direktori app/Models dan buat file baru bernama NewsModel.php dan tambahkan kode berikut.<br>
+            
 ```
 <?php
 
@@ -185,7 +186,10 @@ class NewsModel extends Model
     protected $table = 'news';
 }
 ```
-         b. Tambahkan Metode NewsModel::getNews() <br>
+
+        
+   b. Tambahkan Metode NewsModel::getNews() <br>
+   
 ```
  public function getNews($slug = false)
     {
@@ -198,8 +202,9 @@ class NewsModel extends Model
 ```
 contohnya <br>
 ![image](https://github.com/IsnaDewi/IsnaDewiMalikaArum/assets/134571793/509cf760-c208-40b6-ac08-454f1c248181) <br>
-      4. Tampilkan Berita<br>
-            a. Menambahkan Aturan Perutean<br>
+      4. Tampilkan Berita <br>
+      - Menambahkan Aturan Perutean <br>
+      
 ```
 <?php
 
@@ -214,8 +219,9 @@ $routes->get('news/(:segment)', [News::class, 'show']); // Add this line
 $routes->get('pages', [Pages::class, 'index']);
 $routes->get('(:segment)', [Pages::class, 'view']);
 ```
-      b. Buat Pengontrol Berita <br>
-      Buat pengontrol baru di app/Controllers/News.php . <br>
+- Buat Pengontrol Berita <br>
+Buat pengontrol baru di app/Controllers/News.php . <br>
+      
 ```
 <?php
 
@@ -240,7 +246,9 @@ class News extends BaseController
     }
 }
 ```
-         c. Berita Lengkap::index() Metode <br>
+
+- Berita Lengkap::index() Metode <br>
+         
 ```
 <?php
 
@@ -268,8 +276,10 @@ class News extends BaseController
 }
 ```
 
-      5. Buat File Tampilan berita/indeks <br>
-            a. Buat app/Views/news/index.php dan tambahkan potongan kode berikutnya.<br>
+- Buat File Tampilan berita/indeks <br>
+a. Buat app/Views/news/index.php dan tambahkan potongan kode berikutnya. <br>
+
+            
 ```
 <h2><?= esc($title) ?></h2>
 
@@ -295,7 +305,10 @@ class News extends BaseController
 <?php endif ?>
 ```
 
-      b. Berita Lengkap::show()Metode
+
+b. Berita Lengkap::show()Metode
+
+      
 ```
 <?php
 
@@ -325,9 +338,13 @@ class News extends BaseController
             . view('templates/footer');
     }
 }
-``` <br>
-      6. Buat berita/lihat lihat file<br>
+```
+
+
+-  Buat berita/lihat lihat file<br>
 membuat tampilan terkait di app/Views/news/view.php . Letakkan kode berikut di file ini.<br>
+
+
 ```
 <h2><?= esc($news['title']) ?></h2>
 <p><?= esc($news['body']) ?></p>
@@ -437,6 +454,7 @@ class News extends BaseController
    1. memeriksa apakah data yang dikirimkan lolos aturan validasi.<br>
    2. menyimpan item berita ke database.<br>
    3. mengembalikan halaman sukses.<br>
+   
 ```
 <?php
 
@@ -483,11 +501,11 @@ class News extends BaseController
 ```
 contohnya <br>
 ![image](https://github.com/IsnaDewi/IsnaDewiMalikaArum/assets/134571793/065cc802-8155-47f5-8ea4-1899156a9e6c)<br>
-
          d. Kembalikan Halaman Sukses<br>
-            Buat tampilan di app/Views/news/success.php dan tulis pesan sukses.
-Ini bisa sesederhana:<br>
-```<p>News item created successfully.</p>```
+            Buat tampilan di app/Views/news/success.php dan tulis pesan sukses. Ini bisa sesederhana:<br>
+```
+<p>News item created successfully.</p>
+```
 contohnya <br>
 ![image](https://github.com/IsnaDewi/IsnaDewiMalikaArum/assets/134571793/22f628fc-9b94-4d6f-ae05-767473328f9a)<br>
 
@@ -509,12 +527,14 @@ class NewsModel extends Model
 }
 ```
 contohnya <br>
-![image](https://github.com/IsnaDewi/IsnaDewiMalikaArum/assets/134571793/78829693-65dd-4560-8a00-bd5ba855bae1)<br>
 
-         5. Buat Item Berita <br>
-      arahkan browser Anda ke lingkungan pengembangan lokal tempat Anda menginstal CodeIgniter dan tambahkan /news/new ke URL<br>
-      contohnya <br>
-![image(https://github.com/IsnaDewi/IsnaDewiMalikaArum/assets/134571793/007775bf-b77b-47c4-898b-7303fc948baa) <br>
+![image](https://github.com/IsnaDewi/IsnaDewiMalikaArum/assets/134571793/78829693-65dd-4560-8a00-bd5ba855bae1) <br>
+
+5. Buat Item Berita <br>
+arahkan browser Anda ke lingkungan pengembangan lokal tempat Anda menginstal CodeIgniter dan tambahkan /news/new ke URL <br>
+contohnya <br>
+      
+
 
 **Kesimpulan** , yang akan memberi Anda beberapa petunjuk tentang bacaan lebih lanjut dan sumber daya lainnya.
       
