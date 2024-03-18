@@ -358,7 +358,152 @@ class Filters extends BaseConfig
 ```
 
 contohnya : <br>
+![image](https://github.com/IsnaDewi/IsnaDewiMalikaArum/assets/134571793/9bdc28f7-89af-40b0-ae78-1cee0e2bcef4) <br>
+      2. Menambahkan Aturan Perutean <br>
+            menambahkan aturan tambahan ke file app/Config/Routes.php <br>
+```
+<?php
 
+// ...
+
+use App\Controllers\News;
+use App\Controllers\Pages;
+
+$routes->get('news', [News::class, 'index']);
+$routes->get('news/new', [News::class, 'new']); // Add this line
+$routes->post('news', [News::class, 'create']); // Add this line
+$routes->get('news/(:segment)', [News::class, 'show']);
+
+$routes->get('pages', [Pages::class, 'index']);
+$routes->get('(:segment)', [Pages::class, 'view']);
+```
+
+      3. Buat Formulir
+            a. Buat berita/buat lihat file
+            Buat tampilan baru di app/Views/news/create.php :
+```
+<h2><?= esc($title) ?></h2>
+
+<?= session()->getFlashdata('error') ?>
+<?= validation_list_errors() ?>
+
+<form action="/news" method="post">
+    <?= csrf_field() ?>
+
+    <label for="title">Title</label>
+    <input type="input" name="title" value="<?= set_value('title') ?>">
+    <br>
+
+    <label for="body">Text</label>
+    <textarea name="body" cols="45" rows="4"><?= set_value('body') ?></textarea>
+    <br>
+
+    <input type="submit" name="submit" value="Create news item">
+</form>
+```
+
+         b. Pengendali Berita
+               => Tambahkan Berita::baru() untuk Menampilkan Formulir
+            Pertama, buatlah metode untuk menampilkan form HTML yang telah Anda buat.
+```
+<?php
+
+namespace App\Controllers;
+
+use App\Models\NewsModel;
+use CodeIgniter\Exceptions\PageNotFoundException;
+
+class News extends BaseController
+{
+    // ...
+
+    public function new()
+    {
+        helper('form');
+
+        return view('templates/header', ['title' => 'Create a news item'])
+            . view('news/create')
+            . view('templates/footer');
+    }
+}
+```
+
+      c. Tambahkan Berita::create() untuk Membuat Item Berita
+   Selanjutnya, buat metode untuk membuat item berita dari data yang dikirimkan.
+   Anda akan melakukan tiga hal di sini:
+   1. memeriksa apakah data yang dikirimkan lolos aturan validasi.
+   2. menyimpan item berita ke database.
+   3. mengembalikan halaman sukses.
+```
+<?php
+
+namespace App\Controllers;
+
+use App\Models\NewsModel;
+use CodeIgniter\Exceptions\PageNotFoundException;
+
+class News extends BaseController
+{
+    // ...
+
+    public function create()
+    {
+        helper('form');
+
+        $data = $this->request->getPost(['title', 'body']);
+
+        // Checks whether the submitted data passed the validation rules.
+        if (! $this->validateData($data, [
+            'title' => 'required|max_length[255]|min_length[3]',
+            'body'  => 'required|max_length[5000]|min_length[10]',
+        ])) {
+            // The validation fails, so returns the form.
+            return $this->new();
+        }
+
+        // Gets the validated data(Simpan Item Berita)
+        $post = $this->validator->getValidated();
+
+        $model = model(NewsModel::class);
+
+        $model->save([
+            'title' => $post['title'],
+            'slug'  => url_title($post['title'], '-', true),
+            'body'  => $post['body'],
+        ]);
+
+        return view('templates/header', ['title' => 'Create a news item'])
+            . view('news/success')
+            . view('templates/footer');
+    }
+}
+```
+
+         d. Kembalikan Halaman Sukses
+            Buat tampilan di app/Views/news/success.php dan tulis pesan sukses.
+Ini bisa sesederhana:
+```<p>News item created successfully.</p>```
+
+      4. Pembaruan Model Berita
+            Edit NewsModel untuk memberikannya daftar bidang yang dapat diperbarui di $allowedFields properti.
+```
+<?php
+
+namespace App\Models;
+
+use CodeIgniter\Model;
+
+class NewsModel extends Model
+{
+    protected $table = 'news';
+
+    protected $allowedFields = ['title', 'slug', 'body'];
+}
+```
+
+      5. Buat Item Berita <br>
+      arahkan browser Anda ke lingkungan pengembangan lokal tempat Anda menginstal CodeIgniter dan tambahkan /news/new ke URL<br>
+      
 **Kesimpulan** , yang akan memberi Anda beberapa petunjuk tentang bacaan lebih lanjut dan sumber daya lainnya.
       
       
