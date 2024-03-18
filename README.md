@@ -60,7 +60,7 @@ $routes->get('(:segment)', [Pages::class, 'view']);
 ```
 
 contohnya <br>
-![image](https://github.com/IsnaDewi/IsnaDewiMalikaArum/assets/134571793/3fdab5fc-c838-44cd-b32f-78eb9f991e95) <br>
+![image](https://github.com/IsnaDewi/IsnaDewiMalikaArum/assets/134571793/f0e3b314-48b7-4f81-a01e-0848caeb9a18) <br>
       2. Buat file di app/Controllers/Pages.php dengan kode berikut. <br>
 ```
 <?php
@@ -83,6 +83,29 @@ class Pages extends BaseController
 
 contohnya <br>
 ![image](https://github.com/IsnaDewi/IsnaDewiMalikaArum/assets/134571793/fbbaedeb-a8e0-40f6-a89f-3e26e7fdfea7)<br>
+      3. Buat Tampilan
+           a. Buat header di app/Views/templates/header.php dan tambahkan kode berikut: <br>
+```
+<!doctype html>
+<html>
+<head>
+    <title>CodeIgniter Tutorial</title>
+</head>
+<body>
+
+    <h1><?= esc($title) ?></h1>
+```
+
+contohnya <br>
+
+      b. buat footer di app/Views/templates/footer.php yang menyertakan kode berikut: <br>
+```
+ <em>&copy; 2022</em>
+</body>
+</html>
+```
+contohnya <br>
+
 **Bagian Berita** , tempat Anda akan mulai menggunakan model dan melakukan beberapa operasi basis data dasar.
 **Buat item berita** , yang akan memperkenalkan operasi database lebih lanjut dan validasi formulir.
 **Kesimpulan** , yang akan memberi Anda beberapa petunjuk tentang bacaan lebih lanjut dan sumber daya lainnya.
