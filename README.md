@@ -35,15 +35,21 @@ Pendahuluan, halaman ini, yang memberi Anda gambaran umum tentang apa yang dihar
       =>Dasar-dasar peroutean<br>
       =>Validasi formulir<br>
       =>Melakukan query database dasar menggunakan Model CodeIgniter<br>
-**Halaman statis**, yang akan mengajarkan Anda dasar-dasar pengontrol, tampilan, dan peroutean.
-      1. Buka file rute yang terletak di app/Config/Routes.php
-      ```<?php<br>
-         use CodeIgniter\Router\RouteCollection;<br>
-         /**<br>
-         * @var RouteCollection $routes<br>
-         */<br>
-         $routes->get('/', 'Home::index');``` <br>
+**Halaman statis**, yang akan mengajarkan Anda dasar-dasar pengontrol, tampilan, dan peroutean.<br>
+      1. Buka file rute yang terletak di app/Config/Routes.php<br>
+```
+<?php
+
+use CodeIgniter\Router\RouteCollection;
+
+/**
+ * @var RouteCollection $routes
+ */
+$routes->get('/', 'Home::index');
+```
+
          
+            
 **Bagian Berita** , tempat Anda akan mulai menggunakan model dan melakukan beberapa operasi basis data dasar.
 **Buat item berita** , yang akan memperkenalkan operasi database lebih lanjut dan validasi formulir.
 **Kesimpulan** , yang akan memberi Anda beberapa petunjuk tentang bacaan lebih lanjut dan sumber daya lainnya.
