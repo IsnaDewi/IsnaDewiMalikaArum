@@ -48,8 +48,31 @@ use CodeIgniter\Router\RouteCollection;
 $routes->get('/', 'Home::index');
 ```
 
-         
-            
+contohnya <br>
+![image](https://github.com/IsnaDewi/IsnaDewiMalikaArum/assets/134571793/37c0e002-040d-44d5-b98d-17a7d9312895) <br>
+
+      2. Buat file di app/Controllers/Pages.php dengan kode berikut. <br>
+```
+<?php
+
+namespace App\Controllers;
+
+class Pages extends BaseController
+{
+    public function index()
+    {
+        return view('welcome_message');
+    }
+
+    public function view($page = 'home')
+    {
+        // ...
+    }
+}
+```
+
+contohnya <br>
+
 **Bagian Berita** , tempat Anda akan mulai menggunakan model dan melakukan beberapa operasi basis data dasar.
 **Buat item berita** , yang akan memperkenalkan operasi database lebih lanjut dan validasi formulir.
 **Kesimpulan** , yang akan memberi Anda beberapa petunjuk tentang bacaan lebih lanjut dan sumber daya lainnya.
