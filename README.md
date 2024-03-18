@@ -15,8 +15,7 @@ NIM : 220102087<br>
 **1. Installation**<br>
     **a. Composer Installation**
       Teknik pertama buka cmder pada web server, lalu ketikan seperti dibawah<br>
-      ```
-      $ composer create-project codeigniter4/appstarter project-root```<br>
+      ```composer create-project codeigniter4/appstarter project-root```<br>
       project-root dapat diganti sesuai nama projek anda<br>
       contohnya <br>
       ![Screenshot 2024-03-18 101407](https://github.com/IsnaDewi/IsnaDewiMalikaArum/assets/134571793/6c42ca1c-a2a5-4daf-81ea-b0ed2399adfb)<br>
@@ -25,7 +24,7 @@ NIM : 220102087<br>
       contohnya <br>
 
       lalu ketikan <br>
-      ``` php spark server ``` <br>
+      ```php spark server``` <br>
       
       
       
