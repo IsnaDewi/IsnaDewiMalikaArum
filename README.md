@@ -196,7 +196,8 @@ class NewsModel extends Model
         return $this->where(['slug' => $slug])->first();
     }
 ```
-
+contohnya <br>
+![image](https://github.com/IsnaDewi/IsnaDewiMalikaArum/assets/134571793/509cf760-c208-40b6-ac08-454f1c248181) <br>
       4. Tampilkan Berita<br>
             a. Menambahkan Aturan Perutean<br>
 ```
@@ -480,7 +481,8 @@ class News extends BaseController
     }
 }
 ```
- <br>
+contohnya <br>
+
 
          d. Kembalikan Halaman Sukses<br>
             Buat tampilan di app/Views/news/success.php dan tulis pesan sukses.
