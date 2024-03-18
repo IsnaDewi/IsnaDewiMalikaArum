@@ -402,7 +402,8 @@ contohnya <br>
     <input type="submit" name="submit" value="Create news item">
 </form>
 ```
-<br>
+contohnya <br>
+![image](https://github.com/IsnaDewi/IsnaDewiMalikaArum/assets/134571793/6a8b5b77-359c-4e10-a018-ebedd28498c6) <br>
          b. Pengendali Berita<br>
                => Tambahkan Berita::baru() untuk Menampilkan Formulir<br>
             Pertama, buatlah metode untuk menampilkan form HTML yang telah Anda buat.<br>
