@@ -324,18 +324,41 @@ class News extends BaseController
             . view('templates/footer');
     }
 }
-```
-
+``` <br>
       6. Buat berita/lihat lihat file<br>
-            membuat tampilan terkait di app/Views/news/view.php . Letakkan kode berikut di file ini.<br>
+membuat tampilan terkait di app/Views/news/view.php . Letakkan kode berikut di file ini.<br>
 ```
 <h2><?= esc($news['title']) ?></h2>
 <p><?= esc($news['body']) ?></p>
 ```
 
 lalu arahakn pada browser ketik **_localhost:8080/news_**
+![image](https://github.com/IsnaDewi/IsnaDewiMalikaArum/assets/134571793/616b7ddb-8ce6-4aff-bc8c-152a9145c0e0) <br>
 
-**Buat item berita** , yang akan memperkenalkan operasi database lebih lanjut dan validasi formulir.
+**Buat item berita** , yang akan memperkenalkan operasi database lebih lanjut dan validasi formulir.<br>
+         1. Aktifkan Filter CSRF <br>
+         Buka file app/Config/Filters.php dan perbarui $methodsproperti seperti berikut: <br>
+```
+<?php
+
+namespace Config;
+
+use CodeIgniter\Config\BaseConfig;
+
+class Filters extends BaseConfig
+{
+    // ...
+
+    public $methods = [
+        'post' => ['csrf'],
+    ];
+
+    // ...
+}
+```
+
+contohnya : <br>
+
 **Kesimpulan** , yang akan memberi Anda beberapa petunjuk tentang bacaan lebih lanjut dan sumber daya lainnya.
       
       
