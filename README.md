@@ -60,7 +60,7 @@ $routes->get('(:segment)', [Pages::class, 'view']);
 ```
 
 contohnya <br>
-
+![image](https://github.com/IsnaDewi/IsnaDewiMalikaArum/assets/134571793/3fdab5fc-c838-44cd-b32f-78eb9f991e95) <br>
       2. Buat file di app/Controllers/Pages.php dengan kode berikut. <br>
 ```
 <?php
