@@ -108,7 +108,38 @@ contohnya <br>
 ![image](https://github.com/IsnaDewi/IsnaDewiMalikaArum/assets/134571793/5a359536-87ec-4888-be05-4a9696281964) <br>
    4. Menambahkan Logika ke Controller
       a. Buat Home.php dan about.php
-      
+      ![image](https://github.com/IsnaDewi/IsnaDewiMalikaArum/assets/134571793/2e24da31-7ec2-4541-b0a3-973e16829476) <br>
+![image](https://github.com/IsnaDewi/IsnaDewiMalikaArum/assets/134571793/b8c50c94-ef62-40b2-bea1-d022f8a9bafb) <br>
+      b. Halaman Lengkap::view() Metode
+```
+<?php
+
+namespace App\Controllers;
+
+use CodeIgniter\Exceptions\PageNotFoundException; // Add this line
+
+class Pages extends BaseController
+{
+    // ...
+
+    public function view($page = 'home')
+    {
+        if (! is_file(APPPATH . 'Views/pages/' . $page . '.php')) {
+            // Whoops, we don't have a page for that!
+            throw new PageNotFoundException($page);
+        }
+
+        $data['title'] = ucfirst($page); // Capitalize the first letter
+
+        return view('templates/header', $data)
+            . view('pages/' . $page)
+            . view('templates/footer');
+    }
+}
+```
+
+contohnya <br>
+
 **Bagian Berita** , tempat Anda akan mulai menggunakan model dan melakukan beberapa operasi basis data dasar.
 **Buat item berita** , yang akan memperkenalkan operasi database lebih lanjut dan validasi formulir.
 **Kesimpulan** , yang akan memberi Anda beberapa petunjuk tentang bacaan lebih lanjut dan sumber daya lainnya.
