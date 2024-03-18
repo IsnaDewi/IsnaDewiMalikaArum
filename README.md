@@ -377,7 +377,8 @@ $routes->get('news/(:segment)', [News::class, 'show']);
 $routes->get('pages', [Pages::class, 'index']);
 $routes->get('(:segment)', [Pages::class, 'view']);
 ```
-
+contohnya <br>
+![image](https://github.com/IsnaDewi/IsnaDewiMalikaArum/assets/134571793/8acd6810-0144-4afd-8330-e83cc3ffbbab) <br>
       3. Buat Formulir<br>
             a. Buat berita/buat lihat file<br>
             Buat tampilan baru di app/Views/news/create.php :<br>
