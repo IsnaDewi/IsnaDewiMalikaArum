@@ -3,7 +3,7 @@ Nama : Isna Dewi Malika Arum<br>
 Kelas : TI - 2D<br>
 NIM : 220102087<br>
 
-**Codeigniter4**<br>
+**1. Codeigniter4**<br>
 => Kerangka Pengembangan Aplikasi - sebuah toolkit - untuk orang-orang yang membangun situs web menggunakan PHP. <br>
 **Basis Data yang Didukung**<br>
 => MySQL melalui MySQLidriver (hanya versi 5.1 ke atas)<br>
@@ -12,7 +12,7 @@ NIM : 220102087<br>
 => Microsoft SQL Server melalui SQLSRVdriver (hanya versi 2005 dan lebih tinggi)<br>
 => Oracle Database melalui OCI8driver (hanya versi 12.1 dan lebih tinggi)<br>
 
-**1. Installation**<br>
+**2. Installation**<br>
     **a. Composer Installation**
       Teknik pertama buka cmder pada web server, lalu ketikan seperti dibawah<br>
       ```composer create-project codeigniter4/appstarter project-root```<br>
@@ -26,7 +26,7 @@ NIM : 220102087<br>
       contohnya<br>
       ![image](https://github.com/IsnaDewi/IsnaDewiMalikaArum/assets/134571793/c3c86f39-5131-4d1b-b00e-7bfe7ff64c5b)<br>
 
-   **2. Build Your First Application** <br>
+   **3. Build Your First Application** <br>
    Anda akan melewati halaman-halaman berikut:<br>
 Pendahuluan, halaman ini, yang memberi Anda gambaran umum tentang apa yang diharapkan dan membuat aplikasi default Anda diunduh dan dijalankan.<br>
  Tutorial ini dimaksudkan untuk memperkenalkan Anda pada framework CodeIgniter4 dan prinsip dasar arsitektur MVC. Ini akan menunjukkan kepada Anda bagaimana aplikasi dasar CodeIgniter dibangun secara langkah demi langkah.<br>
@@ -533,9 +533,28 @@ contohnya <br>
 5. Buat Item Berita <br>
 arahkan browser Anda ke lingkungan pengembangan lokal tempat Anda menginstal CodeIgniter dan tambahkan /news/new ke URL <br>
 contohnya <br>
+
+![image](https://github.com/IsnaDewi/IsnaDewiMalikaArum/assets/134571793/9d57d91f-5ee5-4864-98fb-ebe55c9d80a6)
+<br>
       
-
-
-**Kesimpulan** , yang akan memberi Anda beberapa petunjuk tentang bacaan lebih lanjut dan sumber daya lainnya.
+**3. Codelgniter4 Overview** <br>
+      1. **Struktur Aplikasi** <br>
+         Untuk mendapatkan hasil maksimal dari CodeIgniter, Anda perlu memahami bagaimana struktur aplikasi, secara default, dan apa yang dapat Anda ubah untuk memenuhi kebutuhan aplikasi Anda. <br>
+=> Direktori Default<br>
+   ->aplikasi <br>
+   ->sistem <br>
+   ->publik <br>
+   ->dapat ditulis <br>
+   ->tes <br>
+=>Memodifikasi Lokasi Direktori <br>
+   Jika Anda telah memindahkan salah satu direktori utama, Anda dapat mengubah pengaturan konfigurasi di dalam app/Config/Paths.php . <br>
+   2. **Model, Views, and Controllers** <br>
+   3. **Autoloading Files** <br>
+         a. Pemuat Otomatis Codelgniter4 <br>
+         b. Konfigurasi <br>
+         Konfigurasi awal dilakukan di app/Config/Autoload.php . File ini berisi dua array utama: satu untuk peta kelas, dan satu lagi untuk namespace yang kompatibel dengan PSR-4. <br>
+            => Ruang Nama 
+            
+         
       
       
