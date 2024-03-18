@@ -143,10 +143,32 @@ contohnya <br>
       5. Menjalankan Aplikasi <br>
       ketikan _php spark serve_ pada cmder <br>
 ```php spark serve``` <br>
-lalu kunjungi _** localhost:8080/home**_ <br>
+lalu kunjungi **_localhost:8080/home_** <br>
 seperti gambar dibawah ini <br>
-
+![image](https://github.com/IsnaDewi/IsnaDewiMalikaArum/assets/134571793/3300938e-c450-4880-a519-09d138618336) <br>
 **Bagian Berita** , tempat Anda akan mulai menggunakan model dan melakukan beberapa operasi basis data dasar.
+      1. Buat Database dan Tabel pada phpMyAdmin
+         membuat database **ci4tutorial** yang dapat digunakan untuk tutorial ini
+```
+CREATE TABLE news (
+    id INT UNSIGNED NOT NULL AUTO_INCREMENT,
+    title VARCHAR(128) NOT NULL,
+    slug VARCHAR(128) NOT NULL,
+    body TEXT NOT NULL,
+    PRIMARY KEY (id),
+    UNIQUE slug (slug)
+);
+```
+lalu isikan data di table news
+```
+INSERT INTO news VALUES
+(1,'Elvis sighted','elvis-sighted','Elvis was sighted at the Podunk internet cafe. It looked like he was writing a CodeIgniter app.'),
+(2,'Say it isn\'t so!','say-it-isnt-so','Scientists conclude that some programmers have a sense of humor.'),
+(3,'Caffeination, Yes!','caffeination-yes','World\'s largest coffee shop open onsite nested coffee shop for staff only.');
+```
+      2. Hubungkan ke Basis Data 
+         hapus tanda komentar pada file env 
+
 **Buat item berita** , yang akan memperkenalkan operasi database lebih lanjut dan validasi formulir.
 **Kesimpulan** , yang akan memberi Anda beberapa petunjuk tentang bacaan lebih lanjut dan sumber daya lainnya.
       
