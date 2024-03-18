@@ -139,6 +139,12 @@ class Pages extends BaseController
 ```
 
 contohnya <br>
+![image](https://github.com/IsnaDewi/IsnaDewiMalikaArum/assets/134571793/0ec1fa08-8a09-46d8-8b25-cb1767ada278) <br>
+      5. Menjalankan Aplikasi <br>
+      ketikan _php spark serve_ pada cmder <br>
+```php spark serve``` <br>
+lalu kunjungi _** localhost:8080/home**_ <br>
+seperti gambar dibawah ini <br>
 
 **Bagian Berita** , tempat Anda akan mulai menggunakan model dan melakukan beberapa operasi basis data dasar.
 **Buat item berita** , yang akan memperkenalkan operasi database lebih lanjut dan validasi formulir.
