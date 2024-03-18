@@ -378,9 +378,9 @@ $routes->get('pages', [Pages::class, 'index']);
 $routes->get('(:segment)', [Pages::class, 'view']);
 ```
 
-      3. Buat Formulir
-            a. Buat berita/buat lihat file
-            Buat tampilan baru di app/Views/news/create.php :
+      3. Buat Formulir<br>
+            a. Buat berita/buat lihat file<br>
+            Buat tampilan baru di app/Views/news/create.php :<br>
 ```
 <h2><?= esc($title) ?></h2>
 
@@ -401,10 +401,10 @@ $routes->get('(:segment)', [Pages::class, 'view']);
     <input type="submit" name="submit" value="Create news item">
 </form>
 ```
-
-         b. Pengendali Berita
-               => Tambahkan Berita::baru() untuk Menampilkan Formulir
-            Pertama, buatlah metode untuk menampilkan form HTML yang telah Anda buat.
+<br>
+         b. Pengendali Berita<br>
+               => Tambahkan Berita::baru() untuk Menampilkan Formulir<br>
+            Pertama, buatlah metode untuk menampilkan form HTML yang telah Anda buat.<br>
 ```
 <?php
 
@@ -427,13 +427,13 @@ class News extends BaseController
     }
 }
 ```
-
-      c. Tambahkan Berita::create() untuk Membuat Item Berita
-   Selanjutnya, buat metode untuk membuat item berita dari data yang dikirimkan.
-   Anda akan melakukan tiga hal di sini:
-   1. memeriksa apakah data yang dikirimkan lolos aturan validasi.
-   2. menyimpan item berita ke database.
-   3. mengembalikan halaman sukses.
+<br>
+      c. Tambahkan Berita::create() untuk Membuat Item Berita<br>
+   Selanjutnya, buat metode untuk membuat item berita dari data yang dikirimkan.<br>
+   Anda akan melakukan tiga hal di sini:<br>
+   1. memeriksa apakah data yang dikirimkan lolos aturan validasi.<br>
+   2. menyimpan item berita ke database.<br>
+   3. mengembalikan halaman sukses.<br>
 ```
 <?php
 
@@ -478,14 +478,17 @@ class News extends BaseController
     }
 }
 ```
+ <br>
 
-         d. Kembalikan Halaman Sukses
+         d. Kembalikan Halaman Sukses<br>
             Buat tampilan di app/Views/news/success.php dan tulis pesan sukses.
-Ini bisa sesederhana:
+Ini bisa sesederhana:<br>
 ```<p>News item created successfully.</p>```
+<br>
 
-      4. Pembaruan Model Berita
-            Edit NewsModel untuk memberikannya daftar bidang yang dapat diperbarui di $allowedFields properti.
+      4. Pembaruan Model Berita<br>
+            Edit NewsModel untuk memberikannya daftar bidang yang dapat diperbarui di $allowedFields properti.<br>
+            
 ```
 <?php
 
@@ -500,10 +503,12 @@ class NewsModel extends Model
     protected $allowedFields = ['title', 'slug', 'body'];
 }
 ```
+<br>
 
-      5. Buat Item Berita <br>
+         5. Buat Item Berita <br>
       arahkan browser Anda ke lingkungan pengembangan lokal tempat Anda menginstal CodeIgniter dan tambahkan /news/new ke URL<br>
-      
+      contohnya <br>
+![image(https://github.com/IsnaDewi/IsnaDewiMalikaArum/assets/134571793/007775bf-b77b-47c4-898b-7303fc948baa) <br>
 **Kesimpulan** , yang akan memberi Anda beberapa petunjuk tentang bacaan lebih lanjut dan sumber daya lainnya.
       
       
