@@ -97,7 +97,7 @@ contohnya <br>
 ```
 
 contohnya <br>
-
+![image](https://github.com/IsnaDewi/IsnaDewiMalikaArum/assets/134571793/7e200c64-8b4a-43d4-9153-b2eb0f3ed196) <br>
       b. buat footer di app/Views/templates/footer.php yang menyertakan kode berikut: <br>
 ```
  <em>&copy; 2022</em>
@@ -105,7 +105,10 @@ contohnya <br>
 </html>
 ```
 contohnya <br>
-
+![image](https://github.com/IsnaDewi/IsnaDewiMalikaArum/assets/134571793/5a359536-87ec-4888-be05-4a9696281964) <br>
+   4. Menambahkan Logika ke Controller
+      a. Buat Home.php dan about.php
+      
 **Bagian Berita** , tempat Anda akan mulai menggunakan model dan melakukan beberapa operasi basis data dasar.
 **Buat item berita** , yang akan memperkenalkan operasi database lebih lanjut dan validasi formulir.
 **Kesimpulan** , yang akan memberi Anda beberapa petunjuk tentang bacaan lebih lanjut dan sumber daya lainnya.
