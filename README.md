@@ -508,12 +508,14 @@ class NewsModel extends Model
     protected $allowedFields = ['title', 'slug', 'body'];
 }
 ```
-<br>
+contohnya <br>
+![image](https://github.com/IsnaDewi/IsnaDewiMalikaArum/assets/134571793/78829693-65dd-4560-8a00-bd5ba855bae1)<br>
 
          5. Buat Item Berita <br>
       arahkan browser Anda ke lingkungan pengembangan lokal tempat Anda menginstal CodeIgniter dan tambahkan /news/new ke URL<br>
       contohnya <br>
 ![image(https://github.com/IsnaDewi/IsnaDewiMalikaArum/assets/134571793/007775bf-b77b-47c4-898b-7303fc948baa) <br>
+
 **Kesimpulan** , yang akan memberi Anda beberapa petunjuk tentang bacaan lebih lanjut dan sumber daya lainnya.
       
       
