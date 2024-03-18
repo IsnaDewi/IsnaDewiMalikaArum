@@ -482,13 +482,13 @@ class News extends BaseController
 }
 ```
 contohnya <br>
-
+![image](https://github.com/IsnaDewi/IsnaDewiMalikaArum/assets/134571793/065cc802-8155-47f5-8ea4-1899156a9e6c)<br>
 
          d. Kembalikan Halaman Sukses<br>
             Buat tampilan di app/Views/news/success.php dan tulis pesan sukses.
 Ini bisa sesederhana:<br>
 ```<p>News item created successfully.</p>```
-<br>
+contohnya <br>
 
       4. Pembaruan Model Berita<br>
             Edit NewsModel untuk memberikannya daftar bidang yang dapat diperbarui di $allowedFields properti.<br>
